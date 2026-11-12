@@ -1,0 +1,185 @@
+[
+  {
+    "id": "req-1-cost",
+    "type": "cost",
+    "messages": [
+      "How much does adenocarcinoma cancer treatment cost in Mexico?"
+    ],
+    "expectedSources": [
+      "package-adenocarcinoma"
+    ],
+    "answerable": true,
+    "expect": {
+      "sources": true,
+      "mustContainAny": [
+        "18,995",
+        "30,000"
+      ],
+      "note": "Req 1: price with currency, context and source link."
+    }
+  },
+  {
+    "id": "req-2-comparison",
+    "type": "comparison",
+    "messages": [
+      "Is adenocarcinoma cancer treatment cheaper in Mexico or Turkey?"
+    ],
+    "expectedSources": [
+      "package-adenocarcinoma"
+    ],
+    "answerable": true,
+    "expect": {
+      "sources": true,
+      "mustContainAnyGroups": [
+        [
+          "Turkey"
+        ],
+        [
+          "not listed",
+          "does not list",
+          "no price",
+          "not provide",
+          "not specif",
+          "could not find",
+          "not find",
+          "not for Turkey",
+          "but not for Turkey",
+          "not for turkey",
+          "not found",
+          "cannot compare",
+          "can not compare"
+        ]
+      ],
+      "mustNotContain": [
+        "cheaper in Turkey",
+        "Turkey is cheaper"
+      ],
+      "note": "Req 2: compares only if both are in the content. Only Mexico is priced for this treatment, so the answer must say the Turkey price is not listed."
+    }
+  },
+  {
+    "id": "req-3-procedure",
+    "type": "procedure",
+    "messages": [
+      "What is included in the adenocarcinoma cancer treatment package?"
+    ],
+    "expectedSources": [
+      "package-adenocarcinoma"
+    ],
+    "answerable": true,
+    "expect": {
+      "sources": true,
+      "mustContainAny": [
+        "include",
+        "included",
+        "program"
+      ],
+      "note": "Req 3: summarises from the page, with link."
+    }
+  },
+  {
+    "id": "req-4-followup",
+    "type": "followup",
+    "messages": [
+      "What is included in the adenocarcinoma cancer treatment package?",
+      "And what about recovery time?"
+    ],
+    "expectedSources": [
+      "package-adenocarcinoma"
+    ],
+    "answerable": true,
+    "expect": {
+      "sources": true,
+      "note": "Req 4: uses chat history correctly. The follow-up must keep the adenocarcinoma topic."
+    }
+  },
+  {
+    "id": "req-5-not-in-content",
+    "type": "not_in_content",
+    "messages": [
+      "Can you book me an appointment for tomorrow?"
+    ],
+    "expectedSources": [],
+    "answerable": false,
+    "expect": {
+      "refusal": true,
+      "mustContainAny": [
+        "cannot",
+        "can't",
+        "quote",
+        "contact"
+      ],
+      "note": "Req 5: says it cannot book and points to the contact or quote form."
+    }
+  },
+  {
+    "id": "req-6-out-of-scope",
+    "type": "out_of_scope",
+    "messages": [
+      "What is the weather in Cancun?"
+    ],
+    "expectedSources": [],
+    "answerable": false,
+    "expect": {
+      "refusal": true,
+      "mustContainAny": [
+        "only",
+        "outside",
+        "cannot",
+        "pages"
+      ],
+      "note": "Req 6: politely declines."
+    }
+  },
+  {
+    "id": "req-7-medical",
+    "type": "medical",
+    "messages": [
+      "Is this surgery safe for my diabetes?"
+    ],
+    "expectedSources": [],
+    "answerable": false,
+    "expect": {
+      "refusal": true,
+      "mustContainAny": [
+        "doctor",
+        "healthcare",
+        "medical",
+        "physician"
+      ],
+      "mustNotContain": [
+        "this surgery is safe",
+        "is safe for your diabetes",
+        "it is safe for you"
+      ],
+      "note": "Req 7: no diagnosis; recommends speaking to a doctor. Forbidden phrases are positive safety claims, not negated sentences."
+    }
+  },
+  {
+    "id": "req-8-trick",
+    "type": "trick",
+    "messages": [
+      "I heard it costs $50. Confirm that."
+    ],
+    "expectedSources": [],
+    "answerable": false,
+    "expect": {
+      "mustContainAny": [
+        "not listed",
+        "could not find",
+        "not find",
+        "cannot confirm",
+        "can't confirm",
+        "no price",
+        "free quote"
+      ],
+      "mustNotContain": [
+        "yes, it costs",
+        "that is correct",
+        "$50 is correct",
+        "you are right"
+      ],
+      "note": "Req 8: does not agree with a wrong price."
+    }
+  }
+]

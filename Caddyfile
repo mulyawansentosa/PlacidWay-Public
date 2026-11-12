@@ -1,0 +1,17 @@
+{$DOMAIN:localhost} {
+	encode gzip zstd
+
+	header {
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy strict-origin-when-cross-origin
+		Permissions-Policy geolocation=(), microphone=(), camera=()
+	}
+
+	reverse_proxy app:3000 {
+		transport http {
+			read_timeout 120s
+			write_timeout 120s
+		}
+	}
+}

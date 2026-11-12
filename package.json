@@ -1,0 +1,36 @@
+{
+  "name": "placidway-knowledge-chatbot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Grounded website knowledge chatbot for the PlacidWay assessment.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "ingest": "node scripts/ingest.js",
+    "ingest:force": "node scripts/ingest.js --force",
+    "eval": "node eval/run.js",
+    "eval:required": "node eval/run.js --set required-8.json --out required-8-results",
+    "calibrate": "node scripts/calibrate-retrieval.js",
+    "gaps": "node scripts/gaps.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "better-sqlite3": "^11.8.1",
+    "cheerio": "^1.0.0",
+    "compression": "^1.7.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsdom": "^25.0.1",
+    "minisearch": "^7.1.1",
+    "pino": "^9.6.0",
+    "pino-http": "^10.4.0",
+    "zod": "^4.6.7"
+  }
+}

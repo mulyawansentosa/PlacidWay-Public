@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PlacidWay Assistant · Admin</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .admin-wrap { width: min(1100px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 40px; }
+      .admin-panel { margin-top: 20px; padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+      .admin-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+      [hidden] { display: none !important; }
+      .admin-row input { flex: 1; min-width: 220px; padding: 10px 12px; border: 1px solid #cfddd8; border-radius: 10px; }
+      .admin-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+      table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 13px; }
+      th, td { padding: 9px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+      th { color: var(--muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; }
+      .status-line { margin-top: 10px; color: var(--muted); font-size: 13px; }
+      .pill { display: inline-block; padding: 2px 7px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: 11.5px; font-weight: 700; }
+      pre { margin: 12px 0 0; padding: 12px; background: #f4f8f6; border-radius: 10px; overflow: auto; font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <div class="admin-wrap">
+      <header class="site-header">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">PW</span>
+          <div>
+            <p class="brand-name">PlacidWay Assistant</p>
+            <p class="brand-sub">Admin · content gaps and refresh</p>
+          </div>
+        </div>
+        <a class="ghost-button" href="/">Back to chat</a>
+      </header>
+
+      <section class="admin-panel">
+        <h1 style="font-size: 24px; margin-bottom: 8px">Operations</h1>
+        <p style="margin: 0 0 14px; color: var(--muted); font-size: 14px">
+          Enter the admin token from <code>ADMIN_TOKEN</code>. It is stored in this tab only.
+        </p>
+        <div class="admin-row">
+          <input id="token" type="password" placeholder="Admin token" autocomplete="off" />
+          <button id="save-token" class="send-button" type="button">Use token</button>
+        </div>
+        <div class="admin-actions">
+          <button id="load-gaps" class="ghost-button" type="button" hidden>Load unanswered questions</button>
+          <button id="load-sources" class="ghost-button" type="button" hidden>Load sources</button>
+          <button id="refresh" class="ghost-button" type="button" hidden>Refresh content</button>
+          <button id="refresh-force" class="ghost-button" type="button" hidden>Force refresh</button>
+          <button id="logout" class="ghost-button" type="button" hidden>Log out</button>
+        </div>
+        <p id="status" class="status-line">No action yet.</p>
+        <div id="output"></div>
+      </section>
+    </div>
+    <script src="/admin.js"></script>
+  </body>
+</html>

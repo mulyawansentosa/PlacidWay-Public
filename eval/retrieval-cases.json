@@ -1,0 +1,167 @@
+[
+  {
+    "query": "How much does adrenal cancer treatment cost in Mexico?",
+    "expectedSources": [
+      "package-adrenal"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "How much does adenocarcinoma cancer treatment cost in Mexico?",
+    "expectedSources": [
+      "package-adenocarcinoma"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "What is included in the anal cancer treatment package?",
+    "expectedSources": [
+      "package-anal"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "What videos are available from ITC?",
+    "expectedSources": [
+      "clinic-videos"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "¿Cuánto cuesta el tratamiento de cáncer adrenal en México?",
+    "expectedSources": [
+      "package-adrenal"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "Berapa biaya paket kanker adrenal di Meksiko?",
+    "expectedSources": [
+      "package-adrenal"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "Apa saja yang termasuk dalam paket kanker anal?",
+    "expectedSources": [
+      "package-anal"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "Does the adenocarcinoma package include accommodation?",
+    "expectedSources": [
+      "package-adenocarcinoma"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "What is the price of the 3-week in-patient program?",
+    "expectedSources": [
+      "price-list",
+      "package-adrenal",
+      "package-adenocarcinoma",
+      "package-anal"
+    ],
+    "answerable": true,
+    "note": "Program and add-on prices are repeated on the price list and every package page; any of these pages is a correct hit."
+  },
+  {
+    "query": "Is alternative medicine cheaper in Mexico or Turkey?",
+    "expectedSources": [
+      "price-comparison"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "Where is the ITC clinic located?",
+    "expectedSources": [
+      "clinic-profile"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "What is the in-patient program price for adrenal cancer?",
+    "expectedSources": [
+      "package-adrenal"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "What is the price of LAK cell therapy?",
+    "expectedSources": [
+      "price-list",
+      "package-adrenal",
+      "package-adenocarcinoma",
+      "package-anal"
+    ],
+    "answerable": true,
+    "note": "Program and add-on prices are repeated on the price list and every package page; any of these pages is a correct hit."
+  },
+  {
+    "query": "How much does a dental implant cost in Mexico?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "What is the clinic's phone number?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "What is the price in Indonesian Rupiah?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "What is the cost of a heart bypass in Mexico?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "What is the price of LASIK surgery in Tijuana?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "What is the success rate of the adrenal cancer treatment?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "What is the email address for ITC?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "Who is the CEO of PlacidWay?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "What is the price of a hair transplant in Turkey?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "What is the price of a hotel room in Cancun?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "What is the price in euros?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "How many weeks is the in-patient program?",
+    "expectedSources": [
+      "price-list",
+      "package-adrenal",
+      "package-adenocarcinoma",
+      "package-anal"
+    ],
+    "answerable": true,
+    "note": "Regression: plural 'weeks' must match '3-week' in the pages."
+  }
+]

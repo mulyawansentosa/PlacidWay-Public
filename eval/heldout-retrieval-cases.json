@@ -1,0 +1,82 @@
+[
+  {
+    "query": "What is the cost of the anal cancer package in Tijuana?",
+    "expectedSources": [
+      "package-anal"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "How much is the adenocarcinoma in-patient program?",
+    "expectedSources": [
+      "package-adenocarcinoma",
+      "price-list"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "Is the adrenal package price all-inclusive?",
+    "expectedSources": [
+      "package-adrenal"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "Does ITC have video testimonials from patients?",
+    "expectedSources": [
+      "clinic-videos"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "What does the out-patient program include?",
+    "expectedSources": [
+      "package-adrenal",
+      "package-adenocarcinoma",
+      "package-anal"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "Berapa lama program rawat inap?",
+    "expectedSources": [
+      "price-list",
+      "package-adrenal",
+      "package-adenocarcinoma",
+      "package-anal"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "Cuánto cuesta el tratamiento de cáncer anal?",
+    "expectedSources": [
+      "package-anal"
+    ],
+    "answerable": true
+  },
+  {
+    "query": "What is the cost of a knee replacement in Mexico?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "Do you offer cosmetic surgery?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "What is the price of a flight to Tijuana?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "Is there an online payment option?",
+    "expectedSources": [],
+    "answerable": false
+  },
+  {
+    "query": "What is the price of hip surgery in Turkey?",
+    "expectedSources": [],
+    "answerable": false
+  }
+]

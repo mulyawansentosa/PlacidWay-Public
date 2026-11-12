@@ -1,0 +1,11 @@
+node_modules
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+data
+eval/results.md
+eval/results.json
+*.log
+.DS_Store
